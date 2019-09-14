@@ -7,7 +7,6 @@ Ants.Generate = function(Part, wt, Resource)
         PC.Name = Resource
         PC.Parent = game.Workspace
         PC.Position = Part.Position + Vector3.new(math.random(-100,100),0,math.random(-100,100))
-        PC.Script:Destroy()
         PC.Transparency = 0
     end
 end
