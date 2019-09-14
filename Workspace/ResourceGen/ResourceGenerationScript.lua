@@ -1,0 +1,5 @@
+local initiate = require(game.ReplicatedStorage.Source.BasicFunctions.GeneratorModule)
+spawn(function()
+	initiate.Generate(game.ReplicatedStorage.Dirt, 3, "Dirt")
+end)
+initiate.Generate(game.ReplicatedStorage.Food, 3, "Food")
