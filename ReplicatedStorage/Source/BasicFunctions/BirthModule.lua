@@ -89,6 +89,24 @@ Ants.Creation = function(Queen, Folder, BirthTime)
     elseif Class.Value == "Army" then
         Larva.PrimaryPart.Color = Folder.Configuration:WaitForChild("ArmyColor").Value
     end
+	if Class.Value == "Army" then
+		local Ready = true
+		local Ant = Larva.PrimaryPart
+		Ant.Touched:Connect(function(Touched)
+			if Touched.Parent ~= game.Workspace and Touched.Parent ~= Larva.Parent then
+				if Touched.Parent.Parent.ClassName == "Folder" then
+					if Ready then
+						Ready = false
+						local Hum = Touched.Parent:FindFirstChild("Humanoid")
+						Hum:TakeDamage(5)
+						wait(2)
+						Ready = true
+					end
+				end
+			end
+		end)
+		
+	end
 	return Larva
 end
 
